@@ -17,7 +17,7 @@ Use this search to populate the search_groups field. Modify to filter to the sea
 | stats values(title) as searches by eai:acl.app 
 | rename eai:acl.app as app 
 | tojson output_field=search_groups
-| stats values(search_group) as search_groups
+| stats values(search_groups) as search_groups
 | eval search_groups="[".mvjoin(search_groups, ",")."]"
 """
 
